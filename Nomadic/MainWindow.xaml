@@ -1,0 +1,15 @@
+﻿<Window x:Class="Nomadic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nomadic"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600">
+    <Grid>
+        <Button x:Name="btnSignIn" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" Margin="0,460,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Center" Margin="0,374,0,0" Text="Email Address" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,410,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nubilum" HorizontalAlignment="Center" Margin="0,222,0,0" VerticalAlignment="Top" Height="88" Width="287" FontSize="72"/>
+    </Grid>
+</Window>
