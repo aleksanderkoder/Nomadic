@@ -6,24 +6,37 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Nomadic
 {
     class APIClient
     {
-        public static async Task SignInUser(string email, string password)
+        private const string UrlBase = "https://nomadicserver.000webhostapp.com/scripts/"; 
+        public static async Task SignInUser(string inEmail, string inPassword)
         {
             using var client = new HttpClient();
-            var response = await client.GetStringAsync("https://nomadicserver.000webhostapp.com/scripts/test.php");
-            Trace.WriteLine(response); 
-            if(response == "hei fra nomadic server")
+            var user = new
             {
-                Trace.WriteLine("Det fungerer");
-            }
-            else
-            {
-                Trace.WriteLine("Det fungerer ikke");
-            }
+                email = inEmail,
+                password = inPassword
+            };
+            string json = JsonSerializer.Serialize(user);
+            StringContent data = new StringContent(json, Encoding.UTF8, "application/json"); 
+
+            var response = await client.PostAsync(UrlBase + "userSignIn.php", data);
+            var res = await response.Content.ReadAsStringAsync();
+            Trace.WriteLine(res);
+            client.Dispose();
+            //if(response == "hei fra nomadic server")
+            //{
+            //    Trace.WriteLine("Det fungerer");
+            //}
+            //else
+            //{
+            //    Trace.WriteLine("Det fungerer ikke");
+            //}
         }
     }
 

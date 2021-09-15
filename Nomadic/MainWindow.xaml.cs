@@ -29,7 +29,7 @@ namespace Nomadic
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            Trace.WriteLine(email);
+            //Trace.WriteLine(email);
             await APIClient.SignInUser(email, password);
         }
     }
