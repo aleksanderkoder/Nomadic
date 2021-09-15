@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aleksander\\Desktop\\Nomadic\\Nomadic.csproj": {}
+    "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\Nomadic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aleksander\\Desktop\\Nomadic\\Nomadic.csproj": {
+    "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\Nomadic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aleksander\\Desktop\\Nomadic\\Nomadic.csproj",
+        "projectUniqueName": "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\Nomadic.csproj",
         "projectName": "Nomadic",
-        "projectPath": "C:\\Users\\Aleksander\\Desktop\\Nomadic\\Nomadic.csproj",
+        "projectPath": "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\Nomadic.csproj",
         "packagesPath": "C:\\Users\\Aleksander\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aleksander\\Desktop\\Nomadic\\obj\\",
+        "outputPath": "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

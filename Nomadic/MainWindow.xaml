@@ -4,12 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nomadic"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600">
+        mc:Ignorable="d" FontFamily="Segoe UI Light" FontSize="18"
+        Title="Nomadic" Height="900" Width="1600">
     <Grid>
-        <Button x:Name="btnSignIn" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" Margin="0,460,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Center" Margin="0,374,0,0" Text="Email Address" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,410,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Nubilum" HorizontalAlignment="Center" Margin="0,222,0,0" VerticalAlignment="Top" Height="88" Width="287" FontSize="72"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnSignIn" Grid.Column="1" Grid.Row="6" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="txtEmail" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Email Address" TextWrapping="Wrap" Width="120"/>
+        <TextBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Text="Password" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <TextBlock Text="Nomadic" FontSize="100" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Center"/>
     </Grid>
 </Window>
