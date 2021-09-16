@@ -6,4 +6,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="images\Moonlit Asteroid.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\Moonlit Asteroid.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
 </Project>

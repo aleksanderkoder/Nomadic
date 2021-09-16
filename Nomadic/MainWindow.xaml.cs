@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,8 +30,21 @@ namespace Nomadic
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            //Trace.WriteLine(email);
-            await APIClient.SignInUser(email, password);
+            APIResponse result = await APIClient.SignInUser(email, password);
+            if (result.Status == "true")
+            {
+                // Successful login
+                // Show app page
+                // Get files from server
+                Trace.WriteLine("Riktig");
+                txtError.Text = "";
+            }
+            else
+            {
+                // Unsuccessful login
+                Trace.WriteLine("Feil");
+                txtError.Text = "Wrong username or password!";
+            }
         }
     }
 }

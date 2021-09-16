@@ -24,11 +24,17 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        
+        <Image Source="/images/Moonlit Asteroid.jpg" Grid.RowSpan="10" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
         <Button x:Name="btnSignIn" Grid.Column="1" Grid.Row="6" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
         <TextBox x:Name="txtEmail" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Email Address" TextWrapping="Wrap" Width="120"/>
         <TextBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Text="Password" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <TextBlock Text="Nomadic" FontSize="100" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Center"/>
+        <TextBlock Text="Nomadic" FontSize="100" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Center" Foreground="White">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
         <TextBlock x:Name="txtError" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
     </Grid>
 </Window>

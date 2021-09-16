@@ -42,3 +42,7 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\No
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\ref\Nomadic.dll
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.pdb
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.genruntimeconfig.cache
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\Moonlit Asteroid.jpg
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic_Content.g.cs
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.csproj.CopyComplete

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "s4V2nktvaKgKH53JzgJwCZyIQ1qmkWvf/BrqgCIYDfi/gjDhXvoNG94+mxRvIH8yhy/4A8kvDGoERuvWpl3VgA==",
+  "dgSpecHash": "jnn3kbMNRxMMjMeJVzNDjoq+VPkrGqRzErmZQ+2L6EW+b05qIWjNwEcC2kyXtyqKrw5wuv21KkjEIorPeMnEGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\Nomadic.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Aleksander\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
