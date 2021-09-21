@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -29,7 +30,7 @@ namespace Nomadic
         private async void btnSignInClick(object sender, RoutedEventArgs e)
         {
             string email = txtEmail.Text;
-            string password = txtPassword.Text;
+            string password = txtPassword.Password.ToString();
             APIResponse result = await APIClient.SignInUser(email, password);
             if (result.Status == "true")
             {
@@ -44,6 +45,35 @@ namespace Nomadic
                 // Unsuccessful login
                 Trace.WriteLine("Feil");
                 txtError.Text = "Wrong username or password!";
+            }
+        }
+
+        private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
+        {
+           if(txtEmail.Text.Length == 0)
+            {
+                Label lbl = lblEmail;
+                ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
+                myDoubleAnimation.From = new Thickness(0, -30, 0, 0);
+                myDoubleAnimation.To = new Thickness(0, 0, 0, 0);
+                myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+                myDoubleAnimation.AutoReverse = false;
+                lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
+            }
+            
+        }
+
+        private void txtEmail_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtEmail.Text.Length == 0)
+            {
+                Label lbl = lblEmail;
+                ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
+                myDoubleAnimation.From = new Thickness(0, 0, 0, 0);
+                myDoubleAnimation.To = new Thickness(0, -30, 0, 0);
+                myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+                myDoubleAnimation.AutoReverse = false;
+                lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
         }
     }

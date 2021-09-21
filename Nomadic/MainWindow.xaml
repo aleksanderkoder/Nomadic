@@ -6,6 +6,31 @@
         xmlns:local="clr-namespace:Nomadic"
         mc:Ignorable="d" FontFamily="Segoe UI Light" FontSize="18"
         Title="Nomadic" Height="900" Width="1600">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0,0,0,2"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CaretBrush" Value="White"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="BorderThickness" Value="0,0,0,2"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CaretBrush" Value="White"/>
+        </Style>
+        <!--<Style x:Key="AquireLight">
+            <Setter Property="FontFamily" Value="fonts/AquireLight-YzE0o.otf"/>
+        </Style>-->
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,16 +50,27 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Image Source="/images/Moonlit Asteroid.jpg" Grid.RowSpan="10" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
-        <Button x:Name="btnSignIn" Grid.Column="1" Grid.Row="6" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <TextBox x:Name="txtEmail" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Email Address" TextWrapping="Wrap" Width="120"/>
-        <TextBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Text="Password" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <TextBlock Text="Nomadic" FontSize="100" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Center" Foreground="White">
+        <Image Source="/images/Deep Space.jpg" Grid.RowSpan="10" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
+        <Button x:Name="btnSignIn" IsDefault="True" Grid.Column="1" Grid.Row="6" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" ForceCursor="True">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Email address" x:Name="lblEmail" Target="{Binding ElementName=txtEmail}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Foreground="White"/>
+        <TextBox x:Name="txtEmail" LostFocus="txtEmail_LostFocus" GotFocus="txtEmail_GotFocus" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
+        <Label Content="Password" Target="{Binding ElementName=txtPassword}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Foreground="White"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+        <TextBlock Text="Nomadic" FontSize="90" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Center" Foreground="White" FontFamily="/fonts/#Aquire Light">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock x:Name="txtError" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="txtError" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
         
     </Grid>
 </Window>

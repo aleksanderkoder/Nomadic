@@ -46,3 +46,4 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\im
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic_Content.g.cs
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.csproj.CopyComplete
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\Deep Space.jpg
