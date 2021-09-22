@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nomadic"
         mc:Ignorable="d" FontFamily="Segoe UI Light" FontSize="18"
-        Title="Nomadic" Height="900" Width="1600">
+        Title="Nomadic" Height="900" Width="1600" Icon="/images/nomadic logo.png"
+        ShowInTaskbar="True" IsEnabled="True">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="BorderThickness" Value="0,0,0,2"/>
@@ -30,28 +31,31 @@
             <Setter Property="FontFamily" Value="fonts/AquireLight-YzE0o.otf"/>
         </Style>-->
     </Window.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="500"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <Image Source="/images/Deep Space.jpg" Grid.RowSpan="10" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
-        <Button x:Name="btnSignIn" IsDefault="True" Grid.Column="1" Grid.Row="6" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" ForceCursor="True">
+
+        <Image Source="/images/Deep Space.jpg" Grid.RowSpan="11" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
+        <Image Source="/images/nomadic logo.png" Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Text="Nomadic" FontSize="48" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2"  HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light"/>
+        <Button x:Name="btnSignIn" IsDefault="True" Grid.Column="1" Grid.Row="7" Content="Sign in" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -61,16 +65,11 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label Content="Email address" x:Name="lblEmail" Target="{Binding ElementName=txtEmail}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Foreground="White"/>
-        <TextBox x:Name="txtEmail" LostFocus="txtEmail_LostFocus" GotFocus="txtEmail_GotFocus" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
-        <Label Content="Password" Target="{Binding ElementName=txtPassword}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Foreground="White"/>
-        <PasswordBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <TextBlock Text="Nomadic" FontSize="90" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"  HorizontalAlignment="Center" Foreground="White" FontFamily="/fonts/#Aquire Light">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock x:Name="txtError" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-        
+        <Label Content="Email address" x:Name="lblEmail" Target="{Binding ElementName=txtEmail}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Foreground="White" Height="48" VerticalAlignment="Top" Margin="0,22,0,0"/>
+        <TextBox x:Name="txtEmail" LostFocus="txtEmail_LostFocus" GotFocus="txtEmail_GotFocus" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
+        <Label x:Name="lblPassword" Content="Password" Target="{Binding ElementName=txtPassword}" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" Foreground="White" Margin="0,22,0,10"/>
+        <PasswordBox x:Name="txtPassword" LostFocus="txtPassword_LostFocus" GotFocus="txtPassword_GotFocus" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+        <TextBlock x:Name="txtError" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+
     </Grid>
 </Window>

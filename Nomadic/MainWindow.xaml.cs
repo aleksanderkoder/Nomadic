@@ -54,10 +54,11 @@ namespace Nomadic
             {
                 Label lbl = lblEmail;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(0, -30, 0, 0);
-                myDoubleAnimation.To = new Thickness(0, 0, 0, 0);
+                myDoubleAnimation.From = new Thickness(0, -10, 0, 0);
+                myDoubleAnimation.To = new Thickness(0, 20, 0, 0);
                 myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
                 myDoubleAnimation.AutoReverse = false;
+                myDoubleAnimation.EasingFunction = new CubicEase();
                 lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
             
@@ -69,10 +70,41 @@ namespace Nomadic
             {
                 Label lbl = lblEmail;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(0, 0, 0, 0);
-                myDoubleAnimation.To = new Thickness(0, -30, 0, 0);
+                myDoubleAnimation.From = new Thickness(0, 20, 0, 0);
+                myDoubleAnimation.To = new Thickness(0, -10, 0, 0);
                 myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
                 myDoubleAnimation.AutoReverse = false;
+                myDoubleAnimation.EasingFunction = new CubicEase();
+                lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
+            }
+        }
+
+        private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPassword.Password.ToString().Length == 0)
+            {
+                Label lbl = lblPassword;
+                ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
+                myDoubleAnimation.From = new Thickness(0, -10, 0, 0);
+                myDoubleAnimation.To = new Thickness(0, 20, 0, 0);
+                myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+                myDoubleAnimation.AutoReverse = false;
+                myDoubleAnimation.EasingFunction = new CubicEase();
+                lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
+            }
+        }
+
+        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPassword.Password.ToString().Length == 0)
+            {
+                Label lbl = lblPassword;
+                ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
+                myDoubleAnimation.From = new Thickness(0, 20, 0, 0);
+                myDoubleAnimation.To = new Thickness(0, -10, 0, 0);
+                myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+                myDoubleAnimation.AutoReverse = false;
+                myDoubleAnimation.EasingFunction = new CubicEase();
                 lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
         }
