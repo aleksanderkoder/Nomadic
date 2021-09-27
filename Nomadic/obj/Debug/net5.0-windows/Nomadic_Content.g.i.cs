@@ -9,6 +9,6 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/deep%20space.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/moonlit%20asteroid.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/def%20back.jpg")]
 
 

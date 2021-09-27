@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/deep%20space.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/katie-moum-gl662szje2m-unsplash.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/moonlit%20asteroid.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/peakpx%20(1).jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/def%20back.jpg")]
 
 

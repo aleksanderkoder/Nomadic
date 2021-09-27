@@ -47,3 +47,6 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\No
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.csproj.CopyComplete
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\Deep Space.jpg
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\def back.jpg
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\katie-moum-gL662SZje2M-unsplash.jpg
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\peakpx (1).jpg

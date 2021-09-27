@@ -54,8 +54,8 @@ namespace Nomadic
             {
                 Label lbl = lblEmail;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(0, -10, 0, 0);
-                myDoubleAnimation.To = new Thickness(0, 20, 0, 0);
+                myDoubleAnimation.From = new Thickness(184, -10, 0, 0);
+                myDoubleAnimation.To = new Thickness(184, 20, 0, 0);
                 myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
                 myDoubleAnimation.AutoReverse = false;
                 myDoubleAnimation.EasingFunction = new CubicEase();
@@ -70,8 +70,8 @@ namespace Nomadic
             {
                 Label lbl = lblEmail;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(0, 20, 0, 0);
-                myDoubleAnimation.To = new Thickness(0, -10, 0, 0);
+                myDoubleAnimation.From = new Thickness(184, 20, 0, 0);
+                myDoubleAnimation.To = new Thickness(184, -10, 0, 0);
                 myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
                 myDoubleAnimation.AutoReverse = false;
                 myDoubleAnimation.EasingFunction = new CubicEase();
@@ -85,8 +85,8 @@ namespace Nomadic
             {
                 Label lbl = lblPassword;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(0, -10, 0, 0);
-                myDoubleAnimation.To = new Thickness(0, 20, 0, 0);
+                myDoubleAnimation.From = new Thickness(184, -10, 0, 0);
+                myDoubleAnimation.To = new Thickness(184, 20, 0, 0);
                 myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
                 myDoubleAnimation.AutoReverse = false;
                 myDoubleAnimation.EasingFunction = new CubicEase();
@@ -100,8 +100,8 @@ namespace Nomadic
             {
                 Label lbl = lblPassword;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(0, 20, 0, 0);
-                myDoubleAnimation.To = new Thickness(0, -10, 0, 0);
+                myDoubleAnimation.From = new Thickness(184, 20, 0, 0);
+                myDoubleAnimation.To = new Thickness(184, -10, 0, 0);
                 myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
                 myDoubleAnimation.AutoReverse = false;
                 myDoubleAnimation.EasingFunction = new CubicEase();
