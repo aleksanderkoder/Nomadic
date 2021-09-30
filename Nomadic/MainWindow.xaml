@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nomadic"
+        xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d" FontFamily="Segoe UI Light" FontSize="18"
         Title="Nomadic" Height="900" Width="1600" Icon="/images/nomadic logo.png"
         ShowInTaskbar="True" IsEnabled="True" Background="black">
@@ -72,6 +73,8 @@
                 </Style>-->
             </Button.Resources>
         </Button>
+        <fa5:ImageAwesome Icon="Solid_At" Foreground="white" Grid.Column="4" Grid.Row="4" Margin="16,35,163,35" RenderTransformOrigin="0.555,0.201"/>
+        <fa5:ImageAwesome Icon="Solid_Lock" Foreground="white" Grid.Column="4" Grid.Row="5" RenderTransformOrigin="0.555,0.201" Margin="7,32,162,38"/>
         <TextBlock Text="USER LOGIN" TextWrapping="Wrap" Grid.Row="2" FontSize="45" FontFamily="fonts/#Moon" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="white" Grid.Column="4" Grid.RowSpan="2" Height="101" Width="192" TextAlignment="Center"/>
         <Label Content="Email address" x:Name="lblEmail" Target="{Binding ElementName=txtEmail}" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Foreground="White" Height="48" VerticalAlignment="Top" Margin="184,20,0,10"/>
         <TextBox x:Name="txtEmail" LostFocus="txtEmail_LostFocus" GotFocus="txtEmail_GotFocus" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jnn3kbMNRxMMjMeJVzNDjoq+VPkrGqRzErmZQ+2L6EW+b05qIWjNwEcC2kyXtyqKrw5wuv21KkjEIorPeMnEGw==",
+  "dgSpecHash": "/vV1KE3Cd8aRmYD1Zy0lchRSHUcTc8ewvFK4zQ3ZTWpLLXmes+/V1ZBSmEzDiIg4CVC8C8ozfz07LTjkMCZGiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Aleksander\\Documents\\GitHub\\Nomadic\\Nomadic\\Nomadic.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Aleksander\\.nuget\\packages\\fontawesome5\\2.1.4\\fontawesome5.2.1.4.nupkg.sha512",
     "C:\\Users\\Aleksander\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []

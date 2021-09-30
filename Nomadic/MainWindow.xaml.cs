@@ -39,6 +39,9 @@ namespace Nomadic
                 // Get files from server
                 Trace.WriteLine("Riktig");
                 txtError.Text = "";
+                this.Hide(); 
+                UserInterface ui = new UserInterface();
+                ui.Show(); 
             }
             else
             {
@@ -107,6 +110,11 @@ namespace Nomadic
                 myDoubleAnimation.EasingFunction = new CubicEase();
                 lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
+        }
+
+        private void btnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
