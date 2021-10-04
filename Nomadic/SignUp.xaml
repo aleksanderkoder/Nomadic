@@ -1,0 +1,103 @@
+﻿<Window x:Class="Nomadic.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nomadic" xmlns:fa5="http://schemas.fontawesome.com/icons/"
+        mc:Ignorable="d"
+        FontFamily="Segoe UI Light" FontSize="18"
+        Title="Sign up" Height="900" Width="1600" Icon="/images/nomadic logo.png"
+        ShowInTaskbar="True" IsEnabled="True" WindowStartupLocation="CenterScreen" Background="black">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="BorderBrush" Value="white"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Blue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CaretBrush" Value="White"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CaretBrush" Value="White"/>
+        </Style>
+        <Style x:Key="Moon">
+            <Setter Property="TextElement.FontFamily" Value="fonts/#Moon"/>
+        </Style>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="white"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <ControlTemplate x:Key="ButtonTemplateLogin" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="White"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                    <Setter Property="TextElement.Foreground" Value="black"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/images/nomadic logo.png" Grid.Column="1" Grid.Row="1"/>
+        <Image Source="/images/def back.jpg" Grid.RowSpan="9" Grid.ColumnSpan="3" Stretch="UniformToFill" Opacity="0.50"/>
+        <fa5:ImageAwesome Icon="Solid_At" Foreground="white" Grid.Column="1" Grid.Row="3" Margin="16,35,163,35" RenderTransformOrigin="0.555,0.201"/>
+        <fa5:ImageAwesome Icon="Solid_Lock" Foreground="white" Grid.Column="1" Grid.Row="5" RenderTransformOrigin="0.555,0.201" Margin="7,32,162,38"/>
+        <TextBlock Text="SIGNUP" TextWrapping="Wrap" Grid.Row="2" FontSize="45" FontFamily="fonts/#Moon" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="white" Grid.Column="1" Height="47" Width="192" TextAlignment="Center"/>
+        <Label Content="Email address" x:Name="lblEmail" Target="{Binding ElementName=txtEmail}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Height="48" VerticalAlignment="Top" Margin="184,20,0,10"/>
+        <TextBox x:Name="txtEmail" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
+        <Label x:Name="lblPassword" Content="Password" Target="{Binding ElementName=txtPassword}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="184,20,0,10"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+        <Button x:Name="btnSignUp" Template="{DynamicResource ButtonTemplateLogin}" IsDefault="True" Grid.Column="1" Grid.Row="6" Content="SIGNUP" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40"/>
+        <TextBlock x:Name="txtError" FontFamily="Segoe UI Light" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFDE4747"/>
+
+    </Grid>
+</Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,17 @@ namespace Nomadic
     /// <summary>
     /// Interaction logic for UserInterface.xaml
     /// </summary>
+    public static class User
+    {
+        public static string email;   
+    }
     public partial class UserInterface : Window
     {
-        public UserInterface()
+        public UserInterface(string inEmail)
         {
+            User.email = inEmail; 
             InitializeComponent();
+            Trace.WriteLine("Logged in user: " + User.email);
         }
 
         private void btnSync_Click(object sender, RoutedEventArgs e)

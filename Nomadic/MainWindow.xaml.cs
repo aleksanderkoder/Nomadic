@@ -26,31 +26,45 @@ namespace Nomadic
         public MainWindow()
         {
             InitializeComponent();
+            UserInterface ui = new UserInterface("test");
+            ui.Show();
         }
         private async void btnSignInClick(object sender, RoutedEventArgs e)
         {
             string email = txtEmail.Text;
             string password = txtPassword.Password.ToString();
-            APIResponse result = await APIClient.SignInUser(email, password);
-            if (result.Status == "true")
+            if (!Reg.ValidateEmail(email))
             {
-                // Successful login
+                txtError.Text = "Please provide a valid email address!";
+                return; 
+            } else if(!Reg.ValidatePassword(password))
+            {
+                txtError.Text = "Please provide a valid password!";
+                return;
+            }
+                
+            APIResponse result = await APIClient.SignInUser(email, password);
+            if (result.Status == "true")  // Successful login
+            {
                 // Show app page
                 // Get files from server
                 Trace.WriteLine("Riktig");
                 txtError.Text = "";
                 this.Hide(); 
-                UserInterface ui = new UserInterface();
+                UserInterface ui = new UserInterface(email);
                 ui.Show(); 
-            }
-            else
+            } else if(result.Message == "Error deserializing API response!") // Error reading API response
             {
-                // Unsuccessful login
+                txtError.Text = result.Message; 
+            }
+            else  // Unsuccessful login
+            {
                 Trace.WriteLine("Feil");
                 txtError.Text = "Wrong username or password!";
             }
         }
 
+        // Handles form animations based on focus
         private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
         {
            if(txtEmail.Text.Length == 0)
@@ -110,11 +124,6 @@ namespace Nomadic
                 myDoubleAnimation.EasingFunction = new CubicEase();
                 lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
-        }
-
-        private void btnSignIn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

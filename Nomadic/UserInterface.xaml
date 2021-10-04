@@ -7,7 +7,8 @@
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
         Title="Overview" Height="900" Width="1600" Icon="/images/nomadic logo.png"
-        ShowInTaskbar="True" IsEnabled="True" Background="#36393E" FontFamily="Segoe UI Light" FontSize="18">
+        ShowInTaskbar="True" IsEnabled="True" WindowStartupLocation="CenterScreen" Background="#36393E"
+        FontFamily="Segoe UI Light" FontSize="18">
 
     <Window.Resources>
         <Style TargetType="Button">
@@ -19,6 +20,9 @@
         <Style TargetType="Rectangle">
             <Setter Property="Fill" Value="#2E3136"/>
         </Style>
+        <Style x:Key="WhiteBorder" TargetType="{x:Type Rectangle}">
+            <Setter Property="Fill" Value="white"/>
+        </Style>
 
     </Window.Resources>
 
@@ -26,11 +30,13 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="175" />
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="1"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="1"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -40,30 +46,34 @@
         
         
         <!--Needed for coloring top- and sidebar-->
-        <Rectangle x:Name="Bar"  Grid.Column="0" Grid.RowSpan="2" Panel.ZIndex="-1" >
+        <Rectangle x:Name="Bar"  Grid.Column="0" Grid.RowSpan="3" Panel.ZIndex="-1" >
         </Rectangle>
-        <Rectangle Grid.Column="1" Panel.ZIndex="-1">
+        <Rectangle Grid.Column="2" Panel.ZIndex="-1">
+        </Rectangle>
+        <Rectangle Style="{StaticResource WhiteBorder}"  Grid.Column="1" Grid.RowSpan="3" Panel.ZIndex="1">
+        </Rectangle>
+        <Rectangle Style="{StaticResource WhiteBorder}" Grid.Row="1" Grid.ColumnSpan="3" Panel.ZIndex="1">
         </Rectangle>
         
         <Image Source="/images/nomadic logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="45"/>
         <!--Contains items for topbar-->
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="55,5,0,5">
+        <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="55,5,0,5">
             <Button x:Name="btnSync" Click="btnSync_Click" Margin="0,0,25,0">
                 <StackPanel Orientation="Horizontal">
                     <fa5:ImageAwesome Icon="Solid_Sync" Foreground="white" Height="23" Width="22" Margin="0,5,0,0"/>
-                    <Label Content="Sync files" FontSize="21" Foreground="white" VerticalAlignment="Center"/>
+                    <Label Content="Sync files" FontSize="18" Foreground="white" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btnUpload" Click="btnUpload_Click" Margin="0,0,25,0">
                 <StackPanel Orientation="Horizontal">
                     <fa5:ImageAwesome Icon="Solid_Upload" Foreground="white" Height="23" Width="22" Margin="0,5,0,0"/>
-                    <Label Content="Upload" FontSize="21" Foreground="white" VerticalAlignment="Center"/>
+                    <Label Content="Upload" FontSize="18" Foreground="white" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btnNewFile" Click="btnNewFile_Click" Margin="0,0,25,0">
                 <StackPanel Orientation="Horizontal">
                     <fa5:ImageAwesome Icon="Solid_Plus" Foreground="white" Height="23" Width="22" Margin="0,5,0,0"/>
-                    <Label Content="Create file" FontSize="21" Foreground="white" VerticalAlignment="Center"/>
+                    <Label Content="Create file" FontSize="18" Foreground="white" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </StackPanel>
@@ -73,19 +83,19 @@
             <Button x:Name="btnShowFiles" Width="135" Click="btnShowFiles_Click" Margin="15,10,15,10" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <fa5:ImageAwesome Icon="Solid_File" Foreground="white" Height="23" Width="22" Margin="0,5,0,0"/>
-                    <Label Content="Files" FontSize="21" Foreground="white" VerticalAlignment="Center"/>
+                    <Label Content="Files" FontSize="18" Foreground="white" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btnRecent" Width="135" Click="btnRecent_Click" Margin="15,10,15,10" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <fa5:ImageAwesome Icon="Solid_Clock" Foreground="white" Height="23" Width="22" Margin="0,5,0,0"/>
-                    <Label Content="Recent" FontSize="21" Foreground="white" VerticalAlignment="Center"/>
+                    <Label Content="Recent" FontSize="18" Foreground="white" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button x:Name="btnRemoved" Width="135" Click="btnNewFile_Click" Margin="15,10,15,10" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <fa5:ImageAwesome Icon="Solid_TrashAlt" Foreground="white" Height="23" Width="22" Margin="0,5,0,0"/>
-                    <Label Content="Removed" FontSize="21" Foreground="white" VerticalAlignment="Center"/>
+                    <Label Content="Removed" FontSize="18" Foreground="white" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </StackPanel>

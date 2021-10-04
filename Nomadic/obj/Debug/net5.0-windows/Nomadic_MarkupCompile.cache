@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\App.xaml
-2-1507803163
+3-138822145
 2-353408239
-5870400404
+7886642706
 1961422631482
-MainWindow.xaml;UserInterface.xaml;
+MainWindow.xaml;SignUp.xaml;UserInterface.xaml;
 
 False
 

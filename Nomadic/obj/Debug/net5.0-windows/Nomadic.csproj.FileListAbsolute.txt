@@ -51,3 +51,5 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Fo
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\FontAwesome5.dll
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\UserInterface.g.cs
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\UserInterface.baml
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\SignUp.g.cs
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\SignUp.baml
