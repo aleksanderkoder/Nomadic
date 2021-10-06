@@ -38,6 +38,15 @@
         <Style x:Key="Moon">
             <Setter Property="TextElement.FontFamily" Value="fonts/#Moon"/>
         </Style>
+        <Style x:Key="CancelButtonFocus">
+            <Setter Property="TextElement.Foreground" Value="white"/>
+            <Setter Property="TextElement.Background" Value="Transparent"/>
+        </Style>
+        <Style x:Key="CancelButtonIdle">
+            <Setter Property="TextElement.Background" Value="Transparent"/>
+            <Setter Property="TextElement.Foreground" Value="#FFDE4747"/>
+            <Setter Property="Button.BorderBrush" Value="#FFDE4747"/>
+        </Style>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border" Color="white"/>
         <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
@@ -45,7 +54,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <ControlTemplate x:Key="ButtonTemplateLogin" TargetType="{x:Type ButtonBase}">
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type ButtonBase}">
             <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
                 <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </Border>
@@ -54,6 +63,30 @@
                     <Setter Property="Background" TargetName="border" Value="White"/>
                     <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                     <Setter Property="TextElement.Foreground" Value="black"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonTemplateCancel" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="#FFDE4747" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="#FFDE4747"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FFDE4747"/>
+                    <Setter Property="TextElement.Foreground" Value="white"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="false">
+                    <Setter Property="TextElement.Foreground" Value="#FFDE4747"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="true">
                     <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
@@ -87,17 +120,20 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Image Source="/images/nomadic logo.png" Grid.Column="1" Grid.Row="1"/>
         <Image Source="/images/def back.jpg" Grid.RowSpan="9" Grid.ColumnSpan="3" Stretch="UniformToFill" Opacity="0.50"/>
+        <Image Source="/images/nomadic logo.png" Grid.Column="1" Grid.Row="1"/>
         <fa5:ImageAwesome Icon="Solid_At" Foreground="white" Grid.Column="1" Grid.Row="3" Margin="16,35,163,35" RenderTransformOrigin="0.555,0.201"/>
         <fa5:ImageAwesome Icon="Solid_Lock" Foreground="white" Grid.Column="1" Grid.Row="5" RenderTransformOrigin="0.555,0.201" Margin="7,32,162,38"/>
         <TextBlock Text="SIGNUP" TextWrapping="Wrap" Grid.Row="2" FontSize="45" FontFamily="fonts/#Moon" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="white" Grid.Column="1" Height="47" Width="192" TextAlignment="Center"/>
         <Label Content="Email address" x:Name="lblEmail" Target="{Binding ElementName=txtEmail}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Height="48" VerticalAlignment="Top" Margin="184,20,0,10"/>
-        <TextBox x:Name="txtEmail" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
+        <TextBox x:Name="txtEmail" GotFocus="txtEmail_GotFocus" LostFocus="txtEmail_LostFocus" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
         <Label x:Name="lblPassword" Content="Password" Target="{Binding ElementName=txtPassword}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Margin="184,20,0,10"/>
-        <PasswordBox x:Name="txtPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <Button x:Name="btnSignUp" Template="{DynamicResource ButtonTemplateLogin}" IsDefault="True" Grid.Column="1" Grid.Row="6" Content="SIGNUP" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40"/>
+        <PasswordBox x:Name="txtPassword" GotFocus="txtPassword_GotFocus" LostFocus="txtPassword_LostFocus" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+        <Button x:Name="btnSignUp" Template="{DynamicResource ButtonTemplate}" IsDefault="True" Grid.Column="1" Grid.Row="6" Content="SIGNUP" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="40" Margin="130,0,0,0"/>
+        <Button x:Name="btnCancel" Template="{DynamicResource ButtonTemplateCancel}" Click="btnCancel_Click" IsDefault="True" Grid.Column="1" Grid.Row="6" Content="CANCEL" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="40" Margin="262,0,0,0"/>
         <TextBlock x:Name="txtError" FontFamily="Segoe UI Light" Text="" Width="auto" FontSize="24" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFDE4747"/>
-
+        <Label Content="Full name" x:Name="lblFullName" Target="{Binding ElementName=txtFullName}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Foreground="White" Height="48" VerticalAlignment="Top" Margin="184,20,0,10"/>
+        <fa5:ImageAwesome Icon="Solid_User" Foreground="white" Grid.Column="1" Grid.Row="4" Margin="16,35,163,35" RenderTransformOrigin="0.555,0.201"/>
+        <TextBox x:Name="txtFullName" GotFocus="txtFullName_GotFocus" LostFocus="txtFullName_LostFocus" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="NoWrap" Width="120"/>
     </Grid>
 </Window>

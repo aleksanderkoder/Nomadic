@@ -33,6 +33,7 @@ namespace Nomadic
         {
             string email = txtEmail.Text;
             string password = txtPassword.Password.ToString();
+
             if (!Reg.ValidateEmail(email))
             {
                 txtError.Text = "Please provide a valid email address!";
@@ -44,6 +45,7 @@ namespace Nomadic
             }
                 
             APIResponse result = await APIClient.SignInUser(email, password);
+
             if (result.Status == "true")  // Successful login
             {
                 // Show app page
@@ -124,6 +126,13 @@ namespace Nomadic
                 myDoubleAnimation.EasingFunction = new CubicEase();
                 lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SignUp su = new SignUp();
+            su.Show();
         }
     }
 }

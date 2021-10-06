@@ -12,8 +12,7 @@ namespace Nomadic
         public static bool ValidateEmail(string emailAddress)
         {
             var regex = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-            bool isValid = Regex.IsMatch(emailAddress, regex, RegexOptions.IgnoreCase);
-            return isValid;
+            return Regex.IsMatch(emailAddress, regex, RegexOptions.IgnoreCase);
         }
         public static bool ValidatePassword(string password)
         {

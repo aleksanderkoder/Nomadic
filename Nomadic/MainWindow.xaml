@@ -45,7 +45,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <ControlTemplate x:Key="ButtonTemplateLogin" TargetType="{x:Type ButtonBase}">
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type ButtonBase}">
             <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
                 <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </Border>
@@ -94,8 +94,8 @@
         <Image Source="/images/nomadic logo.png" Grid.Column="1" Grid.Row="3"/>
         <TextBlock Text="NOMADIC" FontSize="50" Grid.Column="1" Grid.Row="4"  HorizontalAlignment="Center" Foreground="White" FontFamily="fonts/#Moon" VerticalAlignment="Center" Height="65" Width="246" TextAlignment="Center"/>
         <TextBlock Text="No account?" Grid.Column="1" Grid.Row="5" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
-        <Button x:Name="btnSignUp" Template="{DynamicResource ButtonTemplateLogin}" Content="SIGN UP" FontFamily="fonts/#Moon" Grid.Column="1" Grid.Row="6" Width="149" Height="45"/>
-        <Button x:Name="btnSignIn" Template="{DynamicResource ButtonTemplateLogin}" IsDefault="True" Grid.Column="4" Grid.Row="6" Content="LOGIN" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40">
+        <Button x:Name="btnSignUp" Template="{DynamicResource ButtonTemplate}" Click="btnSignUp_Click" Content="SIGN UP" FontFamily="fonts/#Moon" Grid.Column="1" Grid.Row="6" Width="149" Height="45"/>
+        <Button x:Name="btnSignIn" Template="{DynamicResource ButtonTemplate}" IsDefault="True" Grid.Column="4" Grid.Row="6" Content="LOGIN" Click="btnSignInClick" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40">
             <Button.Resources>
                 <!--<Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
