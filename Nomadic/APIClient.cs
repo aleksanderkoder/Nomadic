@@ -42,6 +42,7 @@ namespace Nomadic
                     result = JsonConvert.DeserializeObject<APIResponse>(res);
                 } catch(JsonReaderException e)
                 {
+                    Trace.WriteLine("ERROR: " + e.Message); 
                     result.Message = "Error deserializing API response!"; 
                 }
             } catch(HttpRequestException e)

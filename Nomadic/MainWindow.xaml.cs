@@ -33,7 +33,7 @@ namespace Nomadic
         {
             string email = txtEmail.Text;
             string password = txtPassword.Password.ToString();
-
+            Trace.WriteLine("Test user: test@test.com, Testpass1*");
             if (!Reg.ValidateEmail(email))
             {
                 txtError.Text = "Please provide a valid email address!";
