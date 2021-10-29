@@ -2,7 +2,9 @@
   <img height="70px" src="https://user-images.githubusercontent.com/49065176/135772360-da89fa1f-c3bd-4c01-9a67-159d5a47f186.png" />
 </p>
 
+<p align="center">
 # Nomadic • Cloud storage across devices
+</p>
 A personal file hosting service for accessing files across devices. 
 Upload your files to store them automatically in the cloud, and then easily retrieve them again whenever you need them, regardless of the device. 
 <br/> <br/>
