@@ -38,7 +38,6 @@ namespace Nomadic
             {
                 return false;
             }
-
             else if (!hasSymbols.IsMatch(password))
             {
                 return false;

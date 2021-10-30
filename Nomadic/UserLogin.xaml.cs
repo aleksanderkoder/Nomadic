@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,35 +13,62 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Nomadic
 {
     /// <summary>
-    /// Interaction logic for SignUp.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class SignUp : Window
+    public partial class UserLogin : Window
     {
-        public SignUp()
+        public UserLogin()
         {
             InitializeComponent();
+            UserInterface ui = new UserInterface("test");
+            ui.Show();
         }
-
-        private void txtEmail_GotFocus(object sender, RoutedEventArgs e)
+        private async void btnSignInClick(object sender, RoutedEventArgs e)
         {
-            if (txtEmail.Text.Length == 0)
+            string email = txtEmail.Text;
+            string password = txtPassword.Password.ToString();
+            Trace.WriteLine("Test user: test@test.com, Testpass1*");
+            if (!Reg.ValidateEmail(email))
             {
-                Label lbl = lblEmail;
-                ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(184, 20, 0, 0);
-                myDoubleAnimation.To = new Thickness(184, -10, 0, 0);
-                myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
-                myDoubleAnimation.AutoReverse = false;
-                myDoubleAnimation.EasingFunction = new CubicEase();
-                lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
+                txtError.Text = "Please provide a valid email address!";
+                return;
+            }
+            else if (!Reg.ValidatePassword(password))
+            {
+                txtError.Text = "Please provide a valid password!";
+                return;
+            }
+
+            APIResponse result = await APIClient.SignInUser(email, password);
+
+            if (result.Status == "true")  // Successful login
+            {
+                // Show app page
+                Trace.WriteLine("Riktig");
+                txtError.Text = "";
+                this.Hide();
+                UserInterface ui = new UserInterface(email);
+                ui.Show();
+                // Get files from server
+            }
+            else if (result.Message == "Error deserializing API response!") // Error reading API response
+            {
+                txtError.Text = result.Message;
+            }
+            else  // Unsuccessful login
+            {
+                Trace.WriteLine("Feil");
+                txtError.Text = "Wrong username or password!";
             }
         }
 
+        // Handles form animations based on focus
         private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtEmail.Text.Length == 0)
@@ -53,20 +82,14 @@ namespace Nomadic
                 myDoubleAnimation.EasingFunction = new CubicEase();
                 lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
             }
+
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        private void txtEmail_GotFocus(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            UserLogin mw = new UserLogin();
-            mw.Show(); 
-        }
-
-        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtPassword.Password.ToString().Length == 0)
+            if (txtEmail.Text.Length == 0)
             {
-                Label lbl = lblPassword;
+                Label lbl = lblEmail;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
                 myDoubleAnimation.From = new Thickness(184, 20, 0, 0);
                 myDoubleAnimation.To = new Thickness(184, -10, 0, 0);
@@ -92,11 +115,11 @@ namespace Nomadic
             }
         }
 
-        private void txtFullName_GotFocus(object sender, RoutedEventArgs e)
+        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (txtFullName.Text.Length == 0)
+            if (txtPassword.Password.ToString().Length == 0)
             {
-                Label lbl = lblFullName;
+                Label lbl = lblPassword;
                 ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
                 myDoubleAnimation.From = new Thickness(184, 20, 0, 0);
                 myDoubleAnimation.To = new Thickness(184, -10, 0, 0);
@@ -107,19 +130,11 @@ namespace Nomadic
             }
         }
 
-        private void txtFullName_LostFocus(object sender, RoutedEventArgs e)
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            if (txtFullName.Text.Length == 0)
-            {
-                Label lbl = lblFullName;
-                ThicknessAnimation myDoubleAnimation = new ThicknessAnimation();
-                myDoubleAnimation.From = new Thickness(184, -10, 0, 0);
-                myDoubleAnimation.To = new Thickness(184, 20, 0, 0);
-                myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
-                myDoubleAnimation.AutoReverse = false;
-                myDoubleAnimation.EasingFunction = new CubicEase();
-                lbl.BeginAnimation(Label.MarginProperty, myDoubleAnimation);
-            }
+            this.Hide();
+            SignUp su = new SignUp();
+            su.Show();
         }
     }
 }

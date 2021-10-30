@@ -17,11 +17,13 @@ namespace Nomadic
         private const string UrlBase = "https://nomadicserver.000webhostapp.com/scripts/"; 
         public static async Task<APIResponse> SignInUser(string inEmail, string inPassword)
         {
-            APIResponse result = new APIResponse();
-            result.Status = "false";
-            result.Message = "Error"; 
+            APIResponse result = new APIResponse
+            {
+                Status = "false",
+                Message = "Error"
+            };
 
-            using var client = new HttpClient();
+            using HttpClient client = new HttpClient();
 
             var user = new 
             {
@@ -35,8 +37,8 @@ namespace Nomadic
 
             try
             {
-                var response = await client.PostAsync(UrlBase + "userSignIn.php", data);
-                var res = await response.Content.ReadAsStringAsync();
+                HttpResponseMessage response = await client.PostAsync(UrlBase + "userSignIn.php", data);
+                string res = await response.Content.ReadAsStringAsync();
                 try
                 {
                     result = JsonConvert.DeserializeObject<APIResponse>(res);
@@ -49,10 +51,8 @@ namespace Nomadic
             {
                 Trace.WriteLine(e.Message); 
             }
-            
             client.Dispose();
             return result; 
-             
         }
     }
     public class APIResponse

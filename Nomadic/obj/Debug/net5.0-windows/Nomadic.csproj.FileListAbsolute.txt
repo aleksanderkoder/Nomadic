@@ -27,12 +27,9 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\No
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Nomadic.dll
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\ref\Nomadic.dll
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Nomadic.pdb
-C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.csprojAssemblyReference.cache
-C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic_MarkupCompile.cache
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic_MarkupCompile.lref
-C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.g.resources
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.AssemblyInfoInputs.cache
@@ -44,7 +41,6 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\No
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.genruntimeconfig.cache
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic_Content.g.cs
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.csproj.CopyComplete
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\Deep Space.jpg
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\images\def back.jpg
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\bin\Debug\net5.0-windows\FontAwesome5.Net.dll
@@ -53,3 +49,6 @@ C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Us
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\UserInterface.baml
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\SignUp.g.cs
 C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\SignUp.baml
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\Nomadic.csproj.AssemblyReference.cache
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\UserLogin.g.cs
+C:\Users\Aleksander\Documents\GitHub\Nomadic\Nomadic\obj\Debug\net5.0-windows\UserLogin.baml
